@@ -35,4 +35,5 @@ public class Amount {
     public void setId(Integer id) {
         this.id = id;
     }
+
 }
