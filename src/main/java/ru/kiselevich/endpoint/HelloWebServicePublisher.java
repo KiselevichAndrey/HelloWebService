@@ -1,9 +1,9 @@
-package ru.javarush.endpoint;
+package ru.kiselevich.endpoint;
 
 // класс, для запуска веб-сервера с веб-сервисами
 import javax.xml.ws.Endpoint;
 // класс нашего веб-сервиса
-import ru.javarush.ws.HelloWebServiceImpl;
+import ru.kiselevich.ws.HelloWebServiceImpl;
 
 public class HelloWebServicePublisher {
     public static void main(String... args) {

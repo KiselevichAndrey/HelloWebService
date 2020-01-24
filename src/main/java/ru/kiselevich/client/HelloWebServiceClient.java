@@ -1,4 +1,4 @@
-package ru.javarush.client;
+package ru.kiselevich.client;
 
 // нужно, чтобы получить wsdl описание и через него
 // дотянуться до самого веб-сервиса
@@ -12,7 +12,7 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
 // интерфейс нашего веб-сервиса (нам больше и нужно)
-import ru.javarush.ws.HelloWebService;
+import ru.kiselevich.ws.HelloWebService;
 
 public class HelloWebServiceClient {
     public static void main(String[] args) throws MalformedURLException {
@@ -22,7 +22,7 @@ public class HelloWebServiceClient {
         // Параметры следующего конструктора смотрим в самом первом теге WSDL описания - definitions
         // 1-ый аргумент смотрим в атрибуте targetNamespace
         // 2-ой аргумент смотрим в атрибуте name
-        QName qname = new QName("http://ws.javarush.ru/", "HelloWebServiceImplService");
+        QName qname = new QName("http://ws.kiselevich.ru/", "HelloWebServiceImplService");
 
         // Теперь мы можем дотянуться до тега service в wsdl описании,
         Service service = Service.create(url, qname);
@@ -31,6 +31,6 @@ public class HelloWebServiceClient {
         HelloWebService hello = service.getPort(HelloWebService.class);
 
         // Ура! Теперь можно вызывать удаленный метод
-        System.out.println(hello.getHelloString("JavaRush"));
+        System.out.println(hello.getHelloString("Guys"));
     }
 }
